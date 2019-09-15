@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lan="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=0">
+	<style>#chat,
+#chat:after,
+.chatbox {
+  transition: all 0.4s ease-in-out;
+}
+#chat,
+#close-chat,
+.minim-button,
+.maxi-button,
+.chat-text {
+  font-weight: 700;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  height: 20px;
+  line-height: 20px;
+}
+#chat,
+#close-chat,
+.chatbox {
+  border: 1px solid #a8a8a8;
+}
+#chat:after,
+#chat:before {
+  position: absolute;
+  border-style: solid;
+  content: "";
+}
+.chatbox {
+  position: fixed;
+  bottom: 0px;
+  right: 30px;
+  margin: 0 0 -2500px;
+  background: #fff;
+  border-bottom: none;
+  padding: 28px 10px 10px;
+  z-index: 100000;
+}
+#close-chat {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  font-size: 24px;
+  border: 1px solid #dedede;
+  width: 20px;
+  background:red;
+  z-index: 2;
+}
+#minim-chat,
+#maxi-chat {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  line-height: 20px;
+  cursor: pointer;
+  z-index: 1;
+}
+.minim-button {
+  position: absolute;
+  top: 2px;
+  right: 26px;
+  font-size: 24px;
+  border: 1px solid #dedede;
+  width: 20px;
+  background: #fefefe;
+}
+.maxi-button {
+  position: absolute;
+  top: 2px;
+  right: 26px;
+  font-size: 24px;
+  border: 1px solid #dedede;
+  width: 20px;
+  background: #fefefe;
+}
+.chat-text {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  font-size: 16px;
+}
+#chat {
+  width: 40px;
+  border-radius: 3px;
+  padding: 2px 8px;
+  font-size: 12px;
+  background: #fff;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  top:-10px;
+}
+#chat:before {
+  border-width: 10px 11px 0 0;
+  border-color: #a8a8a8 transparent transparent;
+  left: 7px;
+
+}
+#chat:after {
+  border-width: 9px 8px 0 0;
+  border-color: #fff transparent transparent;
+  left: 8px;
+
+}
+}
+
+@-webkit-keyframes tada {
+  0% {
+    -webkit-transform: scale(1);
+  }
+  10%,
+  20% {
+    -webkit-transform: scale(0.9)rotate(-3deg);
+  }
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale(1.1)rotate(3deg);
+  }
+  40%,
+  60%,
+  80% {
+    -webkit-transform: scale(1.1)rotate(-3deg);
+  }
+  100% {
+    -webkit-transform: scale(1)rotate(0);
+  }
+}
+@keyframes tada {
+  0% {
+    transform: scale(1);
+  }
+  10%,
+  20% {
+    transform: scale(0.9)rotate(-3deg);
+  }
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: scale(1.1)rotate(3deg);
+  }
+  40%,
+  60%,
+  80% {
+    transform: scale(1.1)rotate(-3deg);
+  }
+  100% {
+    transform: scale(1)rotate(0);
+  }
+}
+.tada {
+  -webkit-animation-name: tada;
+  animation-name: tada;
+}
+@-webkit-keyframes hvr-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+@keyframes hvr-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}#btn{
+  position: fixed; /* Fixed/sticky position */
+ bottom: 20px; /* Place the button at the bottom of the page */
+ right: 50px; /* Place the button 30px from the right */
+ z-index: 99; /* Make sure it does not overlap */
+ border: none; /* Remove borders */
+ outline: none; /* Remove outline */
+ background-color: red; /* Set a background color */
+ color: white; /* Text color */
+ cursor: pointer; /* Add a mouse pointer on hover */
+ padding: 15px; /* Some padding */
+ border-radius: 10px; /* Rounded corners */
+ font-size: 2.5vh; /* Increase font size */
+
+
+}
+#aaa{
+  width:100%;
+  height:100%;
+}
+
+body {
+  background: #dedede;
+}
+</style>
+</head>
+<body>
+  <button style="right:30px;background:red;"id="btn" class="animated-chat tada" onclick="loadChatbox()">chat with us</button>
+  <div class="chatbox" id="chatbox">
+    <span class="chat-text">ACM UPES STUDENT CHAP</span>
+    <script>
+      //<![CDATA[
+      document.write('<div id="smartchatbox_img901621879" style=" overflow: hidden; margin: auto; padding: 0;">');
+      document.write('<div id="smartchatbox901621879" style="width: 50vh; height: 60vh; overflow: hidden; margin: auto; padding: 0; border:0; ">');
+      document.write('<iframe  id="aaa" allow="microphone" src="https://console.dialogflow.com/api-client/demo/embedded/bbabf463-56fc-44ba-b29a-cc75660f320f" scrolling="no" frameborder="0"  style="border:0; margin:0; padding: 0;" allowfullscreen>');
+      document.write('</iframe></div></div>');
+      //]]>
+    </script>
+    <div id="close-chat" onclick="closeChatbox()">&times;</div>
+    <div id="minim-chat" onclick="minimChatbox()"><span class="minim-button">&minus;</span></div>
+    <div id="maxi-chat" onclick="loadChatbox()"><span class="maxi-button">&plus;</span></div>
+  </div>
+
+  <script>
+    //<![CDATA[
+    function loadChatbox() {
+      var e = document.getElementById("minim-chat");
+      e.style.display = "block";
+      var e = document.getElementById("maxi-chat");
+      e.style.display = "none";
+      var e = document.getElementById("chatbox");
+      e.style.margin = "0";
+    }
+
+    function closeChatbox() {
+      var e = document.getElementById("chatbox");
+      e.style.margin = "0 0 -1500px 0";
+    }
+
+    function minimChatbox() {
+      var e = document.getElementById("minim-chat");
+      e.style.display = "none";
+      var e = document.getElementById("maxi-chat");
+      e.style.display = "block";
+      var e = document.getElementById("chatbox");
+      e.style.margin = "0 0 -60vh 0";
+    }
+    //]]>
+  </script>
+
+</body>
